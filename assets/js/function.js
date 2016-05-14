@@ -16,6 +16,10 @@ function headerDown() {
   }
 }
 
+window.onresize = function() {
+  headerDown();
+}
+
 function navScroll() {
   $('.nav-scroll').on('click', function(){
     if($(window).width() >= 840) {
