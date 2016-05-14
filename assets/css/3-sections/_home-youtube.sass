@@ -1,0 +1,60 @@
+section.youtube
+  background:
+    image: url(../img/youtube-bg.gif)
+    //color: #e20a0a
+    position: center
+    size: cover
+  color: white
+
+  .home-cta
+    color: #e20a0a
+
+  .flex-video
+    box-shadow: 0px 4px 40px 3px rgba(0, 0, 0, .5)
+    transform: scale(1.4)
+
+    @media (max-width: 1000px)
+      transform: scale(1)
+
+    @media (max-width: 640px)
+      transform: scale(0.9)
+      //margin: 0 20px
+
+
+  .video-strip
+    //background: pink
+    position: absolute
+    //z-index: 0
+    top: 0
+    margin: -50px 10px
+    width: 100%
+    height: calc(100% + 100px)
+    //height: 100%
+    background:
+      image: url(../img/video-strip.png)
+      position: center top
+      repeat: repeat-y
+      size: 75%
+
+    @media(max-width: 640px)
+      display: none
+
+
+
+  .col-1
+    position: relative
+    height: 400px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: stretch
+    //width: 300px
+
+    @media (max-width: 640px)
+      height: auto
+      display: block
+      padding: 0px 0px
+      margin: auto
+
+      &:last-child
+        margin-top: 45px

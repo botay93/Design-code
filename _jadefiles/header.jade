@@ -1,17 +1,30 @@
+//make the content available to both .mobile-nav and .site-nav
+mixin nav-content()
+  ul
+    li: a(href="#about").nav-scroll About 
+    li: a(href="#youtube").nav-scroll YouTube
+    li: a(href="#mentoring").nav-scroll Mentoring
+    li: a(href="#articles").nav-scroll Articles
+    li: a(href="#vine").nav-scroll Vine
+    li: a(href="#design").nav-scroll Design
+    li: a(href="#notes").nav-scroll Notes
+    li: a(href="#podcast").nav-scroll Podcast
+    li: a(href="#contact").nav-scroll Contact
+
+.mobile-nav-container
+  .mobile-nav
+    +nav-content()
+  
 header
   .header-position
     h1.logo Travis Neilson
     
     nav.site-nav
-      ul
-        li: a(href="#about") About 
-        li: a(href="#youtube") YouTube
-        li: a(href="#mentoring") Mentoring
-        li: a(href="#articles") Articles
-        li: a(href="#Vine") Vine
-        li: a(href="#Design") Design
-        li: a(href="#Notes") Notes
-        li: a(href="#Contact") Contact
+      //this line is to include the mixin content
+      +nav-content()
         
         
     a(href="mailto:huynhT0610@gmail.com").email-link +email me
+    
+    //just a toggle button
+    .mobile-nav-toggle: span

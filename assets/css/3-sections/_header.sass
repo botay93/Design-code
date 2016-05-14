@@ -1,0 +1,201 @@
+.home-wrap
+  .mobile-nav-container
+    .mobile-nav
+      display: none
+      position: fixed
+      width: 100%
+      //margin-left: 25%
+      //background: white
+      z-index: 5
+      padding: 30px 0
+      //top: 30px
+
+
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+
+      li
+        text-align: center
+        margin-bottom: 10px
+
+        a
+          text-decoration: none
+          color: $link-color
+
+
+  header
+    width: 135px
+    background: white
+    padding: 30px 0
+    //orient the header-position to the viewport by using fixed position
+    //it sometimes fuck your document up so you need to define width/height again
+    .header-position
+      //background-color: blue
+      width: 135px
+      position: fixed
+      top: 30px
+      left: 0
+      bottom: 30px
+      display: flex
+      flex-direction: column
+      //justify-content is to make space around the item of the flex <div>
+      //space-between basically spread the content out equally with one at
+      //the beginning, and one at the end
+      justify-content: space-between
+
+
+    .logo
+      +hide-text
+      //make the logo always stays within 135px even when the nav bar changes
+      //horizontally in smaller device
+      max-width: 135px
+      background:
+        image: url(/assets/img/logo-tn.svg)
+        repeat: no-repeat
+        position: center
+        //size:contain is to make the img grow as wide/as tall to fill up
+        size: contain
+        //color: pink
+      height: 80px
+      padding: 0
+      margin: 0
+
+    .site-nav
+      ul
+        //background-color: blue
+        list-style: none
+        margin: 20px 0
+        padding: 0 20px 0 0
+        text-align: right
+
+        li
+          //background-color: gray
+          margin-bottom: 10px
+          //the last child will not have padding - smart shit
+          &:last-child
+            margin-bottom: 0
+
+          a
+            text-decoration: none
+            color: $link-color
+
+    .email-link
+      display: block
+      text-align: right
+      padding-right: 20px
+      text-decoration: none
+      color: $link-color
+
+
+    //literally design the toggle button when the screen size is less than 775px
+    .mobile-nav-toggle
+      width: 50px
+      height: 50px
+      //background-color: pink
+      margin-right: 10px
+      align-items: center
+      cursor: pointer
+      //display none so that it doesn't show up when the screen is normal
+      display: none
+
+      span,
+      span:before,
+      span:after
+        content: ""
+        display: block
+        height: 3px
+        width: 100%
+        background: #333
+        position: relative
+        //set the transition specific times and smooth it out
+        transition: all 0.3s ease-in-out
+
+      span:before
+        top: 15px
+
+      span:after
+        bottom: 18px
+
+      &.is-open span
+        background: transparent
+
+      &.is-open span:before
+        transform-origin: center
+        transform: rotate(45deg)
+        top: 0
+
+      &.is-open span:after
+        transform-origin: center
+        transform: rotate(-45deg)
+        top: -3px
+
+
+
+
+
+@media (max-width: 840px)
+  .home-wrap
+    header
+      //reset width to as wide as it can be
+      width: auto
+      height: 80px
+      padding: 0
+      //height: 80px
+      //padding: 0px 0
+      //background-color: pink
+
+      .header-position
+        //reset all positions, size and everything nice
+        position: fixed
+        height: 80px
+        background-color: white
+        //background: none
+        width: 100%
+        top: 0
+        bottom: 0
+        z-index: 5
+        //position: relative
+        //width: auto
+        //top: auto
+        //bottom: auto
+
+        left: auto
+        flex-direction: row
+        align-items: center
+
+        //&.is-open
+          //background: none
+          height: 350px
+
+      .site-nav,
+      .email-link
+        display: none
+
+      .logo
+        height: 45px
+        width: 60px
+        margin-left: 20px
+        //background-color: pink
+
+      .mobile-nav-toggle
+        //background-color: pink
+        position: relative
+        display: flex
+        z-index: 5
+        background: none
+
+    .mobile-nav-container
+
+      .mobile-nav
+        display: block
+        transform: translateY(-100%)
+        transition: all 0.3s ease-in-out
+
+      &.is-open .mobile-nav
+        //background-color: pink
+        background-color: white
+        transform: translateY(20%)
+        z-index: 4
+        transition: all 0.3s ease-in-out

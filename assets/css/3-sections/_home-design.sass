@@ -1,0 +1,76 @@
+.home-sections .design
+  padding: 0px
+
+section.design
+  color: white
+
+
+  .home-lead
+    text-align: center
+    font-size: 30px
+
+  .home-cta
+    margin-top: 20px
+    font-size: 24px
+    color: #ea4c89
+
+  .dribble, .behance
+    background:
+      color: #ea4c89
+      image: url(../img/design-bg.png)
+      position: center
+    padding: 50px 0
+    transition: all 0.2s ease-in-out
+
+    &.behance
+      background:
+        color: #1769ff
+
+      .home-cta
+        color: #1769ff
+
+  .design-container
+    height: 348px
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    .design-row-container
+      display: flex
+      width: 100%
+      height: 116px
+      flex-direction: row
+
+
+      .design-img-link
+        //float: left
+        display: block
+        width: 50%
+        border: 2px solid white
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2)
+        margin: 5px
+        height: calc(100% - 14px)
+        transform: scale(1)
+        transition: all 0.2s ease-in-out
+
+        img
+          display: block
+          width: 100%
+          height: 100%
+
+        &:hover
+          transform: scale(1.1)
+          z-index: 1
+
+  @media(max-width: 640px)
+    .design-container
+      height: auto
+      align-items: center
+
+      .design-row-container
+        height: auto
+        width: 92%
+
+    .home-cta
+      font-size: 28px

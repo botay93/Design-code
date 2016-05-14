@@ -1,0 +1,24 @@
+//basically a function that takes 3 parameters: face, words, and name
+//when call parameters, need #{parameters}
+//parameters need to be in String style 
+mixin face(face, words, name)
+  li.face(style="background-image: url(#{face});")
+    .bubble
+      p #{words}
+      cite - #{name}
+
+section.mentoring#mentoring
+  .flex.flex--center
+    .col-1
+      ul.faces
+        +face("http://fillmurray.com/80/80", "Great design 10/10 asd asd asd asd asd asd asd as das dasd asd asd as das da sd asd asd asd asd asd as das dasd asd asd", "Tam Huynh")
+        +face("http://fillmurray.com/80/80", "Much design, very Wow", "Doge")
+        +face("http://fillmurray.com/80/80", "Dude is good", "Annonymous")
+        +face("http://fillmurray.com/80/80", "Best web designer", "Mom")
+        +face("http://fillmurray.com/80/80", "Meh.", "Dad")
+        li.back-btn.face
+    
+    .col-1
+      p.home-lead.outdented ...Mentoring people like you...
+      //cta stand for call to action
+      a(href="" target="_blank").home-cta Schedule a Call
