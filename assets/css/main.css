@@ -511,7 +511,7 @@ body {
     text-indent: 101%;
     white-space: nowrap;
     max-width: 135px;
-    background-image: url(/assets/img/logo-tn.svg);
+    background-image: url(../img/logo-tn.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -637,7 +637,7 @@ body {
     transition: all 0.3s ease-in-out; } }
 
 section.about {
-  background-image: url(/assets/img/face.jpg);
+  background-image: url(../img/face.jpg);
   background-size: cover;
   background-position: center bottom;
   color: #3f3f42; }
