@@ -1,3 +1,3 @@
-name: Put a name here
+name: Tam Huynh
 markdown: redcarpet
-exclude: ["node_modules", "gulpfile.js", "package.json"]
+exclude: ["node_modules", "gulpfile.js", "package.json", README.md]
