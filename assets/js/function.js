@@ -7,13 +7,13 @@ $(function(){
 });
 
 function headerDown() {
-  if($(window).width() <= 840) {
-    $('.mobile-nav-toggle, .nav-scroll').on('click', function(){
+  $('.mobile-nav-toggle, .nav-scroll').on('click', function(){
+    if($(window).width() <= 840) {
       $('.mobile-nav-toggle').toggleClass('is-open');
       $('.mobile-nav-container').toggleClass('is-open');
       //$('.header-position').toggleClass('is-open');
-    });
-  }
+    }
+  });
 }
 
 window.onresize = function() {
